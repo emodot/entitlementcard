@@ -59,6 +59,7 @@ export const createRadioGroupForm = <T extends string>(): RadioGroupForm<T> => {
         >
           <FormLabel>{title}</FormLabel>
           <RadioGroup
+            aria-required
             sx={{ '& > label': { marginTop: '4px', marginBottom: '4px' } }}
             value={state.selectedValue}
             onBlur={() => setInteracted(true)}
@@ -70,7 +71,7 @@ export const createRadioGroupForm = <T extends string>(): RadioGroupForm<T> => {
                   disabled={disableAllInputs}
                   value={value}
                   label={label}
-                  control={<Radio required />}
+                  control={<Radio />}
                 />
                 {divideItems && index < array.length - 1 ? <Divider variant='middle' /> : null}
               </Fragment>
